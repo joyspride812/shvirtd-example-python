@@ -1,6 +1,6 @@
 #!/bin/bash
 REPO="https://github.com/joyspride812/shvirtd-example-python.git"
-PATH="/opt/shvirtd-example-python"
-git clone $REPO $PATH
-cd $PATH
+DIR="/opt/shvirtd-example-python"
+git clone $REPO $DIR
+cd $DIR
 docker compose up -d
