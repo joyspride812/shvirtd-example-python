@@ -1,0 +1,11 @@
+haproxy/
+nginx/
+LICENSE
+.env
+Dockerfile.python
+not_tested_main.py
+proxy.yaml
+README.md
+schema.pdf
+db/
+db_mysql/
