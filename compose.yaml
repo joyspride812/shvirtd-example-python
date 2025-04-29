@@ -1,0 +1,30 @@
+version: '3.8'
+include:
+  - proxy.yaml
+services:
+  db:    
+    image: mysql:8
+    container_name: db-part3 
+    restart: always    
+    env_file: ".env"
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    volumes:
+      - /home/manger/netology/db/db_mysql:/var/lib/mysql
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    container_name: flask-part3 
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    environment:
+      - DB_HOST=db
+      - DB_USER=app
+      - DB_NAME=virtd
+      - DB_PASSWORD=QwErTy1234
+        
+  
